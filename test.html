@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pola Hidup Sehat - Queenvie 92/29</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+/* CSS DASAR */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Fredoka',sans-serif;
+    background:linear-gradient(135deg,#e0c3fc 0%,#8ec5fc 100%);
+    background-attachment:fixed;
+    color:#4b306a;
+}
+
+/* BANNER */
+.main-banner{
+    width:100%;
+    border-bottom:5px solid #5a3e7e;
+}
+
+.banner-img{
+    width:100%;
+    display:block;
+}
+
+/* NAVBAR & DROPDOWN */
+.navbar{
+    display:flex;
+    justify-content:center;
+    margin-top:-25px;
+    position:sticky;
+    top:10px;
+    z-index:1000;
+}
+
+.nav-links{
+    display:flex;
+    background:#5a3e7e;
+    padding:8px 20px;
+    border-radius:50px;
+    list-style:none;
+    gap:5px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
+    align-items: center;
+}
+
+.nav-links li { position: relative; }
+
+.nav-links a, .dropbtn {
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    padding:10px 18px;
+    border-radius:25px;
+    transition:0.3s;
+    display:block;
+    cursor: pointer;
+}
+
+.nav-links a:hover, .dropdown:hover .dropbtn {
+    background:#a29bfe;
+    transform:translateY(-2px);
+}
+
+.dropdown-content {
+    display:none;
+    position:absolute;
+    background:white;
+    min-width:180px;
+    top: 100%;
+    left: 0;
+    border-radius:12px;
+    box-shadow:0 8px 16px rgba(0,0,0,0.15);
+    overflow:hidden;
+    padding: 0;
+    list-style: none;
+}
+
+/* Jembatan agar mouse tidak putus saat hover */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+
+.dropdown:hover .dropdown-content { display:block; }
+
+.dropdown-content a {
+    color:#5a3e7e !important;
+    padding:12px;
+    display:block;
+    border-radius: 0;
+}
+
+.dropdown-content a:hover { background:#f3f0ff; }
+
+/* CONTAINER & CARDS */
+.container{ padding:50px 10%; }
+
+.glass-card{
+    background:rgba(255,255,255,0.92);
+    padding:40px;
+    border-radius:25px;
+    margin-bottom:35px;
+    box-shadow:0 10px 25px rgba(90,62,126,0.1);
+}
+
+.section-title{
+    color:#5a3e7e;
+    margin-bottom:20px;
+    border-left:8px solid #a29bfe;
+    padding-left:15px;
+}
+
+.section-img{
+    width:100%;
+    max-height:300px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+/* WHO GRID */
+.who-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:25px;
+}
+
+.who-item{
+    background:#f8f4ff;
+    padding:20px;
+    border-radius:20px;
+    border-bottom:5px solid #5a3e7e;
+    transition:0.3s;
+}
+
+.who-item:hover{ transform:translateY(-8px); background:#f0eaff; }
+
+.who-img{ width:60px; height:60px; object-fit:contain; margin-bottom:10px; }
+
+/* MANFAAT */
+.benefit-item{
+    background:#ffffff;
+    padding:15px 25px;
+    border-radius:15px;
+    margin-bottom:15px;
+    border-left:5px solid #a29bfe;
+}
+
+/* DAFTAR PUSTAKA */
+.pustaka-list { list-style: none; padding-left: 10px; }
+.pustaka-list li { margin-bottom: 10px; }
+.pustaka-list a { color: #5a3e7e; text-decoration: none; font-weight: 600; }
+.pustaka-list a:hover { text-decoration: underline; }
+
+/* TENTANG SAYA (ABOUT SECTION) */
+.about-section {
+    background: #f8f4ff; 
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+    border: 1px solid #5a3e7e;
+}
+
+.about-title {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 32px;
+    color: #5a3e7e;
+    margin-bottom: 20px;
+}
+
+.about-title::after {
+    content: "";
+    display: block;
+    border-bottom: 2px dashed #5a3e7e;
+    margin-top: 15px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.about-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #a29bfe;
+    
+}
+
+.about-content { flex: 1; }
+
+.about-text {
+    line-height: 1.6;
+    color: #5a3e7e;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.about-card {
+    background:#f8f4ff;
+    border-radius: 15px;
+    padding: 15px 25px;
+    border: 2px solid #5a3e7e;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #5a3e7e;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-row span {
+    font-weight: 600;
+    color: #5a3e7e;
+    font-family: 'Courier New', monospace;
+}
+
+.info-badge {
+    background:#f8f4ff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 1px solid #a29bfe;
+    color: #5a3e7e;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* MEDIA BOX */
+.media-box{ margin-top:25px; border-radius:20px; overflow:hidden; border:4px solid #5a3e7e; }
+.caption{ font-size:13px; color:#666; margin-top:8px; font-style:italic; text-align: center;}
+
+footer{ text-align:center; padding:30px; color:#5a3e7e; font-weight:600; }
+
+@media(max-width:768px){
+    .container{ padding:30px 5%; }
+    .nav-links{ font-size:11px; }
+    .about-container { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="main-banner">
+    <img src="Banner SAS TIK .png" class="banner-img">
+</header>
+
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a href="#home"><i class="fas fa-home"></i> Beranda</a></li>
+        <li class="dropdown">
+            <a class="dropbtn"><i class="fas fa-info-circle"></i> Informasi ▾</a>
+            <ul class="dropdown-content">
+                <li><a href="#definisi">Definisi</a></li>
+                <li><a href="#komponen">Komponen WHO</a></li>
+            </ul>
+        </li>
+        <li><a href="#manfaat"><i class="fas fa-heart"></i> Manfaat</a></li>
+        <li><a href="#pustaka"><i class="fas fa-book"></i> Pustaka</a></li>
+        <li><a href="#profile"><i class="fas fa-user"></i> Profile</a></li>
+    </ul>
+</nav>
+
+<main class="container" id="home">
+
+    <section id="definisi" class="glass-card">
+        <h2 class="section-title">Definisi Pola Hidup Sehat</h2>
+        <p>
+            Pola hidup sehat adalah rangkaian kebiasaan dan gaya hidup yang memiliki tujuan untuk meningkatkan kesehatan dan mencegah penyakit. Menurut World Health Organization (WHO), pola hidup sehat dijelaskan sebagai cara hidup yang menurunkan risiko sakit parah atau meninggal secara dini.
+        </p>
+        <img src="healthy1.jpg.jpg" class="section-img">
+    </section>
+
+    <section id="komponen" class="glass-card">
+        <h2 class="section-title">Komponen Perilaku Pola Hidup Sehat</h2>
+        <p>Dalam menjaga pola hidup sehat, diperlukan konsistensi untuk mencapai hasil yang baik. Konsistensi tidak harus melakukan yang rumit, melainkan dengan melakukan hal-hal sederhana dapat berperan besar padai jangka panjang yang baik. Terdapat 4 kebiasaan sederhana yang dapat kita lakukan untuk menjaga pola hidup sehat menurut WHO. 
+        </p>
+        <div class="who-grid">
+            <div class="who-item">
+                <img src="food.jpg.jpg" class="who-img">
+                <h3>A. Pola Makan Sehat</h3>
+                <ul>
+                    <li> Kurangi Garam : Batasi konsumsi garam kurang dari 5 gram (sekitar satu sendok teh) per hari untuk mencegah hipertensi.
+ </li>
+                    <li>Kurangi Gula : Batasi asupan gula bebas (tambahan) hingga kurang dari 10% dari total asupan energi harian.</li>
+                    <li>Lemak Sehat :Ganti lemak jenuh (lemak hewani, mentega) dengan lemak tak jenuh (minyak sayur, ikan, kacang-kanangan). Hindari lemak trans industri. </li>
+                </ul>
+                    <li> Serat : Konsumsi setidaknya 400 gram (5 porsi) buah dan sayuran setiap hari.
+</li>
+            </div>
+            <div class="who-item">
+                <img src="workout.jpg.jpg" class="who-img">
+                <h3>B. Aktivitas Fisik</h3>
+                <ul>
+                    <li>Dewasa (18-64 tahun): Lakukan setidaknya 150–300 menit aktivitas aerobik intensitas sedang, atau 75–150 menit intensitas tinggi setiap minggu. </li>
+                    <li>Latihan Kekuatan: Lakukan latihan otot setidaknya 2 hari seminggu.</li>
+                    <li>Kurangi Duduk: Cobalah untuk membatasi waktu yang dihabiskan untuk duduk diam (sedenter) dan gantilah dengan aktivitas fisik apa pun.</li>
+                </ul>
+            </div>
+            <div class="who-item">
+                <img src="life.jpg.jpg" class="who-img">
+                <h3>C. Kebiasaan Gaya Hidup</h3>
+                <ul>
+                    <li>Berhenti Merokok: Tidak ada tingkat paparan tembakau yang aman. Berhenti merokok menurunkan risiko penyakit jantung, kanker, dan penyakit paru-paru. </li>
+                    <li>Hindari Alkohol: WHO menyatakan bahwa tidak ada jumlah konsumsi alkohol yang aman bagi kesehatan. Semakin sedikit Anda minum, semakin baik.</li>
+                    <li>Tidur Cukup: Pastikan tidur yang berkualitas untuk mendukung fungsi mental dan fisik yang optimal.</li>
+                </ul>
+            </div>
+            <div class="who-item">
+                <img src="healthy.jpg.jpg" class="who-img">
+                <h3>D. Kebersihan</h3>
+                <ul>
+                    <li>Vaksinasi: Pastikan vaksinasi Anda dan keluarga tetap mutakhir (up-to-date) untuk mencegah penyakit menular.</li>  
+                    <li>Kebersihan Tangan: Cuci tangan secara teratur dengan sabun dan air untuk mencegah infeksi.</li>
+                    <li>Kesehatan Mental: Kelola stres melalui teknik relaksasi, tidur teratur, dan menjaga hubungan sosial yang positif.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="media-box">
+            <iframe width="100%" height="350" src="https://www.youtube.com/embed/xfxrwrx3-lY" frameborder="0" allowfullscreen></iframe>
+            <p class="caption">Video kebiasaan sederhana untuk hidup sehat</p>
+        </div>
+    </section>
+
+    <section id="manfaat" class="glass-card">
+         <h2 class="section-title"><Main>Manfaat Pola Hidup Sehat</Main></h2>
+        <p> Penerapan pola hidup sehat mungkin tidak memberikan hasil yang dapat langsung dilihat saat ini juga, tetapi merupakan bentuk investasi untuk kesehatan di masa depan. Melalui kebiasaan hidup yang baik, banyak manfaat positif dapat dicapai, bukan hanya untuk tubuh, tetapi juga bagi kesehatan mental dan kualitas hidup kita sebagai manusia. Terdapat beberapa manfaat pola hidup sehat, antara lain: </p>
+        <div class="benefit-item"><h3>1. Meningkatkan Kesehatan Fisik </h3><p>Menerapkan pola hidup sehat mempunyai dampak signifikan pada kesehatan fisik. Caranya dengan mengatur pola makan yang seimbang, rutin berolahraga, dan menjaga berat badan ideal, membuat tubuh menjadi lebih kuat dan terhindar dari risiko berbagai penyakit kronis seperti diabetes, penyakit jantung, dan tekanan darah tinggi. Tidak hanya itu, memiliki jam tidur yang berkualitas juga membuat tubuh Anda lebih segar dan bersemangat.</p></div>
+        <div class="benefit-item"><h3>2. Meningkatkan Energi dan Stamina</h3><p>Pola hidup sehat tidak hanya berfokus pada aspek pencegahan penyakit, tetapi juga berupaya meningkatkan energi dan stamina. Anda bisa melakukannya dengan cara mengonsumsi makanan bergizi, sehingga tubuh mendapatkan sumber energi yang cukup untuk menjalani aktivitas sehari-hari. Olahraga teratur juga membantu meningkatkan daya tahan tubuh yang membuat Anda jadi lebih siap dalam menghadapi tugas-tugas harian dengan lebih bugar dan efisien.
+</p></div>
+        <div class="benefit-item"><h3>3. Mental Stabil</h3><p>Tidak hanya berdampak pada tubuh, pola hidup sehat juga berpengaruh pada kesehatan mental. Olahraga terbukti dapat mengurangi tingkat stres dan kecemasan, sementara nutrisi yang baik berperan penting dalam fungsi otak yang optimal. Jika Anda menjaga keseimbangan antara aktivitas fisik, istirahat yang cukup, dan manajemen stres, maka Anda bisa mencapai kesehatan mental yang lebih baik.
+</p></div>
+        <div class="benefit-item"><h3>4. Mendukung Sistem Kekebalan Tubuh</h3><p>Ketahanan tubuh terhadap penyakit sangat tergantung pada sistem kekebalan tubuh yang baik. Pola hidup sehat dengan asupan nutrisi yang cukup dan olahraga teratur dapat meningkatkan daya tahan tubuh terhadap infeksi dan penyakit. Ini membantu tubuh untuk melawan patogen dan mempercepat proses penyembuhan saat sakit.</p></div>
+        <div class="benefit-item"><h3>5. Meningkatkan Kualitas Hidup</h3><p>Pentingnya pola hidup sehat tidak hanya terletak pada pencegahan penyakit, tetapi juga pada peningkatan kualitas hidup secara keseluruhan. Jika Anda memiliki tubuh yang sehat dan pikiran yang jernih, maka Anda bisa menikmati kehidupan dengan lebih baik. Hal ini mencakup hubungan yang lebih baik, produktivitas yang meningkat, dan kemampuan untuk menikmati momen-momen kecil dalam hidup.</p></div>
+        </section>
+
+<section id="pustaka" class="glass-card">
+    <h2 class="section-title">📚 Daftar Pustaka</h2>
+    <ul class="pustaka-list">
+        <li><a href="https://www.who.int" target="_blank">WHO</a></li>
+        <li><a href="https://primayahospital.com/gizi/hidup-sehat/" target="_blank">Primaya Hospital</a></li>
+        <li><a href="https://ditwasotsk.pom.go.id" target="_blank">BPOM RI</a></li>
+    </ul>
+</section>
+
+<section id="profile" class="about-section">
+    <h2 class="about-title">Tentang Saya</h2>
+    
+    <div class="about-container">
+        <img src="queenvi.jpeg" class="about-photo" alt="Foto Queenvie">
+
+        <div class="about-content">
+            <p class="about-text">
+                Halo semuanya! Nama saya Queenvie. Saya membuat website ini dengan tujuan sebagai wujud kepedulian untuk menyebarluaskan pemahaman tentang pola hidup sehat. Semoga bermanfaat bagi kita semua!
+            </p>
+
+            <div class="about-card">
+                <div class="info-row">
+                    <span>Nama:</span>
+                    <div class="info-badge">Queenvie</div>
+                </div>
+                <div class="info-row">
+                    <span>Kelas:</span>
+                    <div class="info-badge">IX-2</div>
+                </div>
+                <div class="info-row">
+                    <span>No:</span>
+                    <div class="info-badge">29</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>Hidup Sehat itu baik!</p>
+</footer>
+
+</body>
+</html>

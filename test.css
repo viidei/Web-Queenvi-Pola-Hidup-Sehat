@@ -1,0 +1,158 @@
+/* 1. RESET & DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    background-attachment: fixed;
+    color: #4b306a;
+}
+
+/* 2. NAVBAR & BANNER */
+.main-banner { width: 100%; border-bottom: 5px solid #5a3e7e; }
+.banner-img { width: 100%; display: block; }
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: -25px;
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    background: #5a3e7e;
+    padding: 8px 20px;
+    border-radius: 50px;
+    list-style: none;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 25px;
+    transition: 0.3s;
+    display: block;
+}
+
+.nav-links li a:hover { background: #a29bfe; transform: translateY(-2px); }
+
+/* 3. DROPDOWN */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    background: white;
+    min-width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+.dropdown-content a { color: #5a3e7e !important; padding: 12px; display: block; text-decoration: none; }
+.dropdown-content a:hover { background: #f3f0ff; }
+
+/* 4. DAFTAR PUSTAKA (FIXED) */
+.container { padding: 50px 10%; }
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 40px;
+    border-radius: 25px;
+    margin-bottom: 35px;
+    box-shadow: 0 10px 25px rgba(90, 62, 126, 0.1);
+}
+
+.pustaka-list { list-style: none; padding: 0; }
+.pustaka-list li {
+    background: #f8f4ff;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    border-left: 5px solid #5a3e7e;
+    transition: 0.3s;
+}
+.pustaka-list li:hover { transform: translateX(10px); background: #f0eaff; }
+.pustaka-list a { color: #5a3e7e; text-decoration: none; font-weight: 600; }
+
+/* 5. TENTANG SAYA (THEME: PURPLE AESTHETIC) */
+.about-section {
+    background: rgba(255, 255, 255, 0.92); /* Background Putih Glass agar Ungu Badge-nya menonjol */
+    padding: 40px;
+    border-radius: 25px;
+    border: 2px solid #a29bfe; /* Border Ungu Muda */
+    box-shadow: 0 10px 25px rgba(90, 62, 126, 0.1);
+}
+
+.about-title {
+    text-align: center;
+    font-size: 32px;
+    color: #5a3e7e;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-title::after {
+    content: "";
+    display: block;
+    border-bottom: 3px dashed #a29bfe; /* Garis Putus Ungu */
+    margin: 15px auto;
+    width: 50%;
+}
+
+.about-container { display: flex; align-items: center; gap: 40px; }
+
+.about-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #a29bfe; /* Frame Foto Ungu */
+}
+
+.about-text { line-height: 1.7; color: #4b306a; margin-bottom: 20px; }
+
+.about-card {
+    background: #f8f4ff; /* Kotak info Ungu sangat muda */
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #a29bfe;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #a29bfe;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-row span { color: #5a3e7e; font-weight: 600; font-family: 'Courier New', monospace; }
+
+.info-badge {
+    background: #5a3e7e; /* Badge Ungu Tua sesuai Navbar */
+    color: white; /* Teks Putih agar jelas */
+    padding: 5px 20px;
+    border-radius: 20px;
+    min-width: 80px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* 6. RESPONSIVE */
+@media (max-width: 768px) {
+    .about-container { flex-direction: column; text-align: center; }
+    .container { padding: 30px 5%; }
+}
